@@ -5,7 +5,7 @@ function adduser() {
     else {
     username=document.getElementById("username").value;
     localStorage.setItem("username",username);
-    window.location="kwitter_room.html";
+    window.location="lets chat_room.html";
     }
 }
 function getun() {
