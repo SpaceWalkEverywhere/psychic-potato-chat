@@ -1,4 +1,4 @@
-const firebaseConfig = {
+var firebaseConfig = {
   apiKey: "AIzaSyCVWrQYrHjze_2rVDNuARf8eecp115Uq9U",
   authDomain: "chatweb-53865.firebaseapp.com",
   databaseURL: "https://chatweb-53865-default-rtdb.firebaseio.com",
@@ -9,7 +9,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 username=localStorage.getItem("username");
 document.getElementById("username").innerHTML="Welcome "+username+" !!!";
 function addroomname(){
