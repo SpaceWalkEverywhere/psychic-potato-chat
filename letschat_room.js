@@ -10,7 +10,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const app = initializeApp(firebaseConfig);username=localStorage.getItem("username");
+username=localStorage.getItem("username");
 document.getElementById("username").innerHTML="Welcome "+username+" !!!";
 function addroomname(){
       roomname=document.getElementById("rn").value;
