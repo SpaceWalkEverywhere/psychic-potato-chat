@@ -9,6 +9,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
     roomname=localStorage.getItem("rn");
     console.log(roomname);
