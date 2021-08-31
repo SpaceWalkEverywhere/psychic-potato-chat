@@ -5,7 +5,7 @@ function adduser() {
     else {
     username=document.getElementById("username").value;
     localStorage.setItem("username",username);
-    window.location="letschat_room.html";
+    window.location="letschatroom.html";
     }
 }
 function getun() {
