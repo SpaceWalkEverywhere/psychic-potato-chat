@@ -18,7 +18,7 @@ function addroomname(){
             purpose:"addrn",
       });
       localStorage.setItem("rn",roomname);
-      window.location="lets chatpage.html";
+      window.location="letschatpage.html";
 }
 function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
        Room_names = childKey;
@@ -30,7 +30,7 @@ getData();
 function redtorm(name){
       console.log(name);
       localStorage.setItem("rn",name);
-      window.location="lets chatpage.html";
+      window.location="letschatpage.html";
 }
 function logout(){
       localStorage.removeItem("username");
