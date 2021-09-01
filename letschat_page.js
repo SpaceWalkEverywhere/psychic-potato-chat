@@ -23,9 +23,13 @@ function getData() { firebase.database().ref("/"+roomname).on('value', function(
       like=messagedata["likes"];
       namewtag="<h4>"+sender+"<img class='user_tick' src='tick.png'></h4>";
       messagewtag="<h4 class='message_h4'>"+mess+"</h4>";
-      likebutton="<button class='btn btn-warning' id="+firebasemessageid+" value="+like+" onclick='updatelike(this.id);'>";
-      spanwtag="<span class='glyphicon glyphicon-thumbs-up'>like:"+like+"</span></button><hr>";
-      row=namewtag+messagewtag+likebutton+spanwtag;
+      likebutton="<button style='margin:5px;' class='btn btn-warning' id="+firebasemessageid+" value="+like+" onclick='updatelike(this.id);'>";
+      spanwtag="<span class='glyphicon glyphicon-thumbs-up'></span></button>";
+      //-----------------------------------------------------------------------------------
+      dislikebutton="<button style='margin:5px;' class='btn btn-danger' id="+firebasemessageid+" value="+like+" onclick='updatedislike(this.id);'>";
+      spandwtag="<span class='glyphicon glyphicon-thumbs-down'></span></button>";
+      liketag="<span style='margin:5px;'>Likes:"+like+"</span><hr>"
+      row=namewtag+messagewtag+likebutton+spanwtag+dislikebutton+spandwtag+liketag;
       document.getElementById("output").innerHTML+=row;
       } });  }); }
 getData();
@@ -42,6 +46,15 @@ function send(){
 function updatelike(messageid){
       likes=document.getElementById(messageid).value;
       updlikes=Number(likes)+1;
+      firebase.database().ref(roomname).child(messageid).update({
+            likes:updlikes,
+      })
+      console.log(updlikes);
+}
+function updatedislike(messageid){
+      
+      likes=document.getElementById(messageid).value;
+      updlikes=Number(likes)-1;
       firebase.database().ref(roomname).child(messageid).update({
             likes:updlikes,
       })
