@@ -1,4 +1,4 @@
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyALCV2pddbvH7HbQwKYvcC44t1BE-sQeBc",
   authDomain: "chat-app-6b98a.firebaseapp.com",
   projectId: "chat-app-6b98a",
