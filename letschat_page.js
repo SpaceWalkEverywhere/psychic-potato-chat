@@ -45,7 +45,7 @@ function send(){
 }
 function updatelike(messageid){
       likes=document.getElementById(messageid).value;
-      updlikes=Number(likes)+100;
+      updlikes=Number(likes)+1;
       firebase.database().ref(roomname).child(messageid).update({
             likes:updlikes,
       })
@@ -54,7 +54,7 @@ function updatelike(messageid){
 function updatedislike(messageid){
       
       likes=document.getElementById(messageid).value;
-      updlikes=Number(likes)-1000;
+      updlikes=Number(likes)-1;
       firebase.database().ref(roomname).child(messageid).update({
             likes:updlikes,
       })
